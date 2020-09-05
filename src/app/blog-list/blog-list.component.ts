@@ -7,12 +7,54 @@ import { BlogPost } from '../blog-post';
   styleUrls: ['./blog-list.component.scss']
 })
 export class BlogListComponent implements OnInit {
-blogPost: BlogPost[]=[];
-  constructor() { }
+blogPost: BlogPost[][]=[];
+  currentPage:number;
+constructor() { }
 
   ngOnInit(): void {
-    this.blogPost.push(new BlogPost('Blog Post 1','Summary 1'));
-    this.blogPost.push(new BlogPost('Blog Post 2','Excepteur nostrud eiusmod et dolor culpa officia tempor adipisicing pariatur consequat sunt. Qui laborum nostrud ea eiusmod. Sint aute amet irure esse nostrud laborum.'));
+    this.currentPage=0;
+    this.blogPost=[
+      [
+        {title: 'Post 1',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 2',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 3',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 4',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 5',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'}
+      ],
+      [
+        {title: 'Post 6',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 7',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 8',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 9',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 10',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'}
+      ],
+      [
+        {title: 'Post 11',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 12',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 13',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 14',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'},
+        {title: 'Post 15',
+        summary: 'Excepteur aliqua proident exercitation ea sint ad veniam laborum laboris et aliqua occaecat ex. Reprehenderit reprehenderit quis in adipisicing aliqua in veniam ad commodo. Aute eiusmod minim laboris aliquip id mollit et nisi ex.'}
+      ]
+    ]
 
+}
+updatePage(newPage){
+  console.log("Event emited and method executed and recieved new page"+newPage)
+  this.currentPage=newPage;
 }
 }
