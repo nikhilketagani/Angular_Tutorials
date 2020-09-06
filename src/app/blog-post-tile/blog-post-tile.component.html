@@ -1,6 +1,6 @@
-<div class="card">
+<div class="card blog-tile" [ngClass]="{'fav': blogPost.isFav}" >
   <div class="card-body">
-      <h5 class="card-title">
+      <h5 class="card-title" appHighlight="green">
       {{blogPost.title}}
       </h5>
       <p class="card-text" (click)="showFullSummary()">
@@ -12,6 +12,7 @@
 <!-- Accessing Angular pipes from the component class -->
 {{blogPost.summary}}
     </p>
-    <a href="#" class="btn btn-primary">Read</a>
+    <a href="#" class="btn btn-primary blog-btn">Read</a>
+    <a href="#" class="btn btn-primary" (click)="markFavorite()">Favorite</a>
   </div>  
 </div>

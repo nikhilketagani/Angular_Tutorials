@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { BlogPost } from '../blog-post';
+import { BlogPostTileComponent } from '../blog-post-tile/blog-post-tile.component';
 
 @Component({
   selector: 'app-blog-list',
@@ -8,7 +9,9 @@ import { BlogPost } from '../blog-post';
 })
 export class BlogListComponent implements OnInit {
 blogPost: BlogPost[][]=[];
-  currentPage:number;
+currentPage:number;
+//@ViewChild('tile') blogPostTileComponent: BlogPostTileComponent;
+@ViewChildren('tile1') blogPostTileComponent1 :QueryList<BlogPostTileComponent>;
 constructor() { }
 
   ngOnInit(): void {
@@ -56,5 +59,9 @@ constructor() { }
 updatePage(newPage){
   console.log("Event emited and method executed and recieved new page"+newPage)
   this.currentPage=newPage;
+}
+expandAll(){
+  // this.blogPostTileComponent.showFullSummary()
+  this.blogPostTileComponent1.forEach((e)=>{e.showFullSummary()})
 }
 }
